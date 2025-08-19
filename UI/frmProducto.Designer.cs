@@ -40,6 +40,7 @@
             lblTitulo = new Label();
             btnGuardar = new Button();
             btnCancelar = new Button();
+            btnEliminar = new Button();
             gbxDatosProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtCantidad).BeginInit();
             SuspendLayout();
@@ -66,7 +67,7 @@
             txtCantidad.Location = new Point(78, 124);
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(85, 23);
-            txtCantidad.TabIndex = 7;
+            txtCantidad.TabIndex = 4;
             // 
             // lblCantidad
             // 
@@ -82,7 +83,7 @@
             txtPrecio.Location = new Point(78, 94);
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(125, 23);
-            txtPrecio.TabIndex = 5;
+            txtPrecio.TabIndex = 3;
             // 
             // lblPrecio
             // 
@@ -96,9 +97,10 @@
             // txtNombre
             // 
             txtNombre.Location = new Point(78, 65);
+            txtNombre.MaxLength = 50;
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(301, 23);
-            txtNombre.TabIndex = 3;
+            txtNombre.TabIndex = 2;
             // 
             // lblNombre
             // 
@@ -137,34 +139,47 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(294, 249);
+            btnGuardar.Location = new Point(175, 249);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(113, 36);
-            btnGuardar.TabIndex = 2;
+            btnGuardar.TabIndex = 5;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(172, 249);
+            btnCancelar.Location = new Point(294, 249);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(113, 36);
-            btnCancelar.TabIndex = 3;
+            btnCancelar.TabIndex = 6;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(56, 249);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(113, 36);
+            btnEliminar.TabIndex = 7;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // frmProducto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(421, 293);
+            Controls.Add(btnEliminar);
             Controls.Add(btnCancelar);
             Controls.Add(btnGuardar);
             Controls.Add(lblTitulo);
             Controls.Add(gbxDatosProducto);
             Name = "frmProducto";
             Text = "Matentenimiento: Crear Producto";
+            Load += frmProducto_Load;
             gbxDatosProducto.ResumeLayout(false);
             gbxDatosProducto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)txtCantidad).EndInit();
@@ -186,5 +201,6 @@
         private TextBox txtId;
         private Label lblId;
         private NumericUpDown txtCantidad;
+        private Button btnEliminar;
     }
 }
